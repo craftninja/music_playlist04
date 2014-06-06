@@ -1,0 +1,5 @@
+<h1><a href="<%= new_song_path %>">Add Song</a></h1>
+<hr>
+<% @songs.each do |song| %>
+  <%= song.title %> | <%= song.url %>
+<% end %>
