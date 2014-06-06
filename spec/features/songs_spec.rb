@@ -41,4 +41,11 @@ feature 'User can manage existing songs' do
     expect(page).to_not have_content(song_title)
     expect(page).to have_content('Classixx - Hanging Gardens full album')
   end
+
+  scenario 'User can delete the song' do
+    click_on song_title
+    click_on 'Delete'
+    expect(page).to_not have_content(song_title)
+  end
+
 end
