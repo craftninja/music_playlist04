@@ -32,4 +32,13 @@ feature 'User can manage existing songs' do
     expect(page).to have_content song_title
     expect(page).to_not have_content('Add Song')
   end
+
+  scenario 'User can edit the song' do
+    click_on song_title
+    click_on 'Edit'
+    fill_in 'Title', with: 'Classixx - Hanging Gardens full album'
+    click_on 'Update'
+    expect(page).to_not have_content(song_title)
+    expect(page).to have_content('Classixx - Hanging Gardens full album')
+  end
 end
